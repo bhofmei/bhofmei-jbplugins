@@ -1,0 +1,30 @@
+{
+  "name": "bhofmei-jbplugins",
+  "version": "1.0.0",
+  "description": "All jbrowse plugins created by brigitte hofmeister",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhofmei/bhofmei-jbplugins.git"
+  },
+  "keywords": [
+    "jbrowse"
+  ],
+  "author": "Brigitte Hofmeister",
+  "license": "MIT",
+  "homepage": "https://github.com/bhofmei/bhofmei-jbplugins#readme",
+  "dependencies":{
+    "MethylationPlugin": "git+https://github.com/bhofmei/jbplugin-methylation",
+    "SmallRNAPlugin": "bhofmei/jbplugin-smallrna",
+    "StrandedPlotPlugin": "git+https://github.com/bhofmei/jbplugin-strandedplot",
+    "HierarchicalCheckboxPlugin": "git+https://github.com/bhofmei/jbplugin-hierarchicalcheckbox",
+    "NucleotideDensityPlugin": "git+https://github.com/bhofmei/jbplugin-nucdens.git",
+    "ScreenShotPlugin": "git+https://github.com/bhofmei/jbplugin-screenshot",
+    "SeqViewsPlugin": "git+https://github.com/bhofmei/jbplugin-seqview",
+    "TrackScorePlugin": "git+https://github.com/bhofmei/jbplugin-trackscores",
+    "YScaleMenuPlugin": "git+https://github.com/bhofmei/jbplugin-yscale"
+  }
+}
