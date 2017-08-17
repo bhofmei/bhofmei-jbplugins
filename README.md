@@ -39,7 +39,7 @@ All JBrowse plugins created by [Brigitte Hofmeister](https://github.com/bhofmei)
 3. Install the plugins using `npm install`
   - This will create a `node_modules` folder.
   - All plugins will be in this folder.
-4. When adding the plugins to **jbrowse.conf**, the location must be to the **node_modules** directory. Note the plugin name is not the same as the plugin ID
+4. When adding the plugins to **jbrowse.conf**, the location must be to the **node_modules** directory. Note the plugin name is not the same as the plugin ID.
 ```
 [plugins.plugin_id]
 location = plugins/BhofmeiPlugins/node_modules/plugin-name
