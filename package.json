@@ -1,7 +1,7 @@
 {
   "name": "bhofmei-jbplugins",
   "version": "1.0.0",
-  "description": "All jbrowse plugins created by brigitte hofmeister",
+  "description": "All jbrowse plugins created by Brigitte Hofmeister",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,7 @@
     "jbrowse"
   ],
   "author": "Brigitte Hofmeister",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "homepage": "https://github.com/bhofmei/bhofmei-jbplugins#readme",
   "dependencies":{
     "MethylationPlugin": "git+https://github.com/bhofmei/jbplugin-methylation",
@@ -25,6 +25,7 @@
     "ScreenShotPlugin": "git+https://github.com/bhofmei/jbplugin-screenshot",
     "SeqViewsPlugin": "git+https://github.com/bhofmei/jbplugin-seqview",
     "TrackScorePlugin": "git+https://github.com/bhofmei/jbplugin-trackscores",
+    "WiggleSVGPlotPlugin": "git+https://github.com/bhofmei/jbplugin-wigglesvg",
     "YScaleMenuPlugin": "git+https://github.com/bhofmei/jbplugin-yscale"
   }
 }
