@@ -10,7 +10,7 @@ All JBrowse plugins created by [Brigitte Hofmeister](https://github.com/bhofmei)
   - [Stranded Plot Plugin](https://github.com/bhofmei/jbplugin-strandedplot): Visualize plus and minus strand coverage in a single track simulataneously
 - Additional Features
   - [Hierarchical Checkbox Plugin](https://github.com/bhofmei/jbplugin-hierarchicalcheckbox): "Select all" (or deselect all) tracks of a category in the hierarchical track list
-  - [Nucleotide Density Plugin](https://github.com/bhofmei/jbplugin-nucdens.git): Density map of user-specified nucleotide contexts and multiple color configuration options
+  - [Motif Density Plugin](https://github.com/bhofmei/jbplugin-motifdens.git): Density map of user-specified sequence motifs and multiple color configuration options
   - [Screenshot Plugin](https://github.com/bhofmei/jbplugin-screenshot): Makes taking screenshots easy with PhantomJS
   - [Wiggle SVG Plot Plugin](https://github.com/bhofmei/jbplugin-wigglesvg): SVG-based track type for wiggle plots; most useful for screenshots
 - User Experience

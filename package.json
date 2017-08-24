@@ -21,7 +21,7 @@
     "SmallRNAPlugin": "bhofmei/jbplugin-smallrna",
     "StrandedPlotPlugin": "git+https://github.com/bhofmei/jbplugin-strandedplot",
     "HierarchicalCheckboxPlugin": "git+https://github.com/bhofmei/jbplugin-hierarchicalcheckbox",
-    "NucleotideDensityPlugin": "git+https://github.com/bhofmei/jbplugin-nucdens.git",
+    "MotifDensityPlugin": "git+https://github.com/bhofmei/jbplugin-motifdens.git",
     "ScreenShotPlugin": "git+https://github.com/bhofmei/jbplugin-screenshot",
     "SeqViewsPlugin": "git+https://github.com/bhofmei/jbplugin-seqview",
     "TrackScorePlugin": "git+https://github.com/bhofmei/jbplugin-trackscores",
