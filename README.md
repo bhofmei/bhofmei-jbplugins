@@ -21,7 +21,7 @@ All JBrowse plugins created by [Brigitte Hofmeister](https://github.com/bhofmei)
 ## Installation for Web-Browser-Based JBrowse
 
 * This works for UNIX systems only (to my knowledge).
-* Install/activate - See [browser instaltion](browser-unix-install.md) for steps to download plugins of interest.
+* Install/activate - See [browser installation](browser-unix-install.md) for steps to download plugins of interest.
 * Update - In the plugin directory to be updated, run
 ```
 git pull
@@ -30,14 +30,14 @@ git pull
 ## Installation for Desktop JBrowse
 
 ### UNIX systems
-* Install/active - See [desktop installation](desktop-unix-install.md) for steps to download plugins of interest.
+* Install/active - See [unix desktop installation](desktop-unix-install.md) for steps to download plugins of interest.
 * Update - In the plugin directory to be updated, run
 ```
 git pull
 ```
 
 ### Windows systems
-* Install/activate - See [desktop installation](desktop-windows-install.md) for steps to download plugins of interest.
+* Install/activate - See [windows desktop installation](desktop-windows-install.md) for steps to download plugins of interest.
 * Update - Plugin must be reinstalled; see [desktop installation](desktop-windows-install.md) and replace the existing plugin.
 
 ## Fine Print
