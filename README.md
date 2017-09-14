@@ -18,32 +18,27 @@ All JBrowse plugins created by [Brigitte Hofmeister](https://github.com/bhofmei)
   - [Track Scores Plugin](https://github.com/bhofmei/jbplugin-trackscores): Adds a track menu item to change between autoscale types and manual limits
   - [Y-Scale Plugin](https://github.com/bhofmei/jbplugin-yscale): Adds global menu option to set the y-scale position of all visible tracks
 
-## Installation
+## Installation for Web-Browser-Based JBrowse
 
-### Option 1: Install each plugin separately (preferred)
-1. Using the URL links above, navigate to the GitHub repository of interest.
-2. Following the directions in the repositiory README, install and activate the plugin.
-  - In the JBrowse **plugins** directory, run `git clone <git-repo-url> <plugin_id>`
-  - Add the plugin to **jbrowse.conf** as
-  ```
-  [plugins.plugin_id]
-  location = plugins/plugin_id
-  ```
-  - Set plugin configuration options, if necessary
-3. Although more annoying initially to install manually, it will be _much_ easier to update plugins (via `git pull`) as these plugins continue to be developed. In the specific plugin directory, **plugins/plugin_id** run `git pull`. Local changes can be pushed upstream with pull requests.
+* This works for UNIX systems only (to my knowledge).
+* Install/activate - See [browser instaltion](browser-unix-install.md) for steps to download plugins of interest.
+* Update - In the plugin directory to be updated, run
+```
+git pull
+```
 
-### Option 2: Install from npm
-1. Ensure that npm is installed.
-2. In the JBrowse **plugins** directory, run `git clone https://github.com/bhofmei/bhofmei-jbplugins BhofmeiPlugins`.
-2. `cd BhofmeiPlugins`
-3. Install the plugins using `npm install`
-  - This will create a `node_modules` folder.
-  - All plugins will be in this folder.
-4. When adding the plugins to **jbrowse.conf**, the location must be to the **node_modules** directory. Note the plugin name is not the same as the plugin ID.
+## Installation for Desktop JBrowse
+
+### UNIX systems
+* Install/active - See [desktop installation](desktop-unix-install.md) for steps to download plugins of interest.
+* Update - In the plugin directory to be updated, run
 ```
-[plugins.plugin_id]
-location = plugins/BhofmeiPlugins/node_modules/plugin-name
+git pull
 ```
-5. See [npm install configuration](npm_install_config.md) for examples of how to activate each plugin using **jbrowse.conf**.
-5. See individual plugin README files for configuration and additional information (ignore install and activate sections)
-6. All plugins will be updated at once. Use `npm update` to get the latest version of each plugin. Changes made locally cannot be pushed upstream (via pull request).
+
+### Windows systems
+* Install/activate - See [desktop installation](desktop-windows-install.md) for steps to download plugins of interest.
+* Update - Plugin must be reinstalled; see [desktop installation](desktop-windows-install.md) and replace the existing plugin.
+
+## Fine Print
+All plugins are distributed under the Apache License, Version 2.0.
