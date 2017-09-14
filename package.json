@@ -18,10 +18,10 @@
   "homepage": "https://github.com/bhofmei/bhofmei-jbplugins#readme",
   "dependencies":{
     "MethylationPlugin": "git+https://github.com/bhofmei/jbplugin-methylation",
-    "SmallRNAPlugin": "bhofmei/jbplugin-smallrna",
+    "SmallRNAPlugin": "git+https://github.com/bhofmei/jbplugin-smallrna",
     "StrandedPlotPlugin": "git+https://github.com/bhofmei/jbplugin-strandedplot",
     "HierarchicalCheckboxPlugin": "git+https://github.com/bhofmei/jbplugin-hierarchicalcheckbox",
-    "MotifDensityPlugin": "git+https://github.com/bhofmei/jbplugin-motifdens.git",
+    "MotifDensityPlugin": "git+https://github.com/bhofmei/jbplugin-motifdens",
     "ScreenShotPlugin": "git+https://github.com/bhofmei/jbplugin-screenshot",
     "SeqViewsPlugin": "git+https://github.com/bhofmei/jbplugin-seqview",
     "TrackScorePlugin": "git+https://github.com/bhofmei/jbplugin-trackscores",
