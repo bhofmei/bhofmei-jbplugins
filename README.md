@@ -1,6 +1,7 @@
 # Brigitte Hofmeister's JBrowse Plugins
 All JBrowse plugins created by [Brigitte Hofmeister](https://github.com/bhofmei)
 
+To see all the plugins in action, go to [https://bhofmei.github.io/bhofmei-jbplugins/](https://bhofmei.github.io/bhofmei-jbplugins/).
 -------------
 
 ## Contents
