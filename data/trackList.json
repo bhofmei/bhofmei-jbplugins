@@ -1,0 +1,189 @@
+{
+  "formatVersion": 1,
+  "names": {
+    "type": "Hash",
+    "url": "names/"
+  },
+  "tracks": [
+    {
+      "key": "Reference sequence",
+      "seqType": "dna",
+      "urlTemplate": "seq/{refseq_dirpath}/{refseq}-",
+      "category": "Genome",
+      "chunkSize": 20000,
+      "storeClass": "JBrowse/Store/Sequence/StaticChunked",
+      "type": "SequenceTrack",
+      "label": "DNA"
+      },
+    {
+      "key": "Genes",
+      "compress": 0,
+      "category": "Genome",
+      "urlTemplate": "tracks/genes/{refseq}/trackData.json",
+      "type": "JBrowse/View/Track/CanvasFeatures",
+      "storeClass": "JBrowse/Store/SeqFeature/NCList",
+      "style": {
+        "className": "feature",
+        "color": "#daa520"
+      },
+      "label": "genes"
+      },
+    {
+      "label": "tes",
+      "key": "Transposable Elements",
+      "compress": 0,
+      "category": "Genome",
+      "urlTemplate": "tracks/tes/{refseq}/trackData.json",
+      "storeClass": "JBrowse/Store/SeqFeature/NCList",
+      "style": {
+        "className": "feature",
+        "color": "#77158D"
+      },
+      "type": "JBrowse/View/Track/CanvasFeatures"
+      },
+    {
+      "label": "cvi-snps",
+      "key": "Cvi-0 Snps",
+      "category": "SNPs",
+      "urlTemplate": "raw/Cvi-0_short.vcf.gz",
+      "storeClass": "JBrowse/Store/SeqFeature/VCFTabix",
+      "type": "JBrowse/View/Track/HTMLVariants"
+      },
+    {
+      "histograms": {
+        "storeClass": "JBrowse/Store/SeqFeature/BigWig",
+        "urlTemplate": "raw/test_smrna_short.bw"
+      },
+      "category": "Small RNA",
+      "key": "Wild Type Small RNA",
+      "type": "SmallRNAPlugin/View/Track/smAlignments",
+      "storeClass": "JBrowse/Store/SeqFeature/BAM",
+      "label": "track_wild_type_smrna",
+      "urlTemplate": "raw/test_smrna_short_adjusted.bam"
+      },
+    {
+      "category": "Methylation",
+      "key": "Wild Type Methylation",
+      "label": "track_wild_type_methylation",
+      "methylatedOption": true,
+      "storeClass": "MethylationPlugin/Store/SeqFeature/MethylBigWig",
+      "type": "MethylationPlugin/View/Track/Wiggle/MethylPlot",
+      "urlTemplate": "raw/test_methyl_short_v3.bw"
+      },
+    {
+      "category": "Methylation",
+      "key": "Wild Type Methylation - animal",
+      "label": "track_wild_type_methylation_animal",
+      "storeClass": "MethylationPlugin/Store/SeqFeature/MethylBigWig",
+      "type": "MethylationPlugin/View/Track/Wiggle/MethylPlot",
+      "urlTemplate": "raw/test_methyl_short_v3.bw",
+      "isAnimal": true,
+      "context": ["cg", "ch"],
+      "style": {
+        "height": 50
+      }
+      },
+    {
+      "category": "Methylation",
+      "key": "Extended Modifications",
+      "label": "track_extended_mods",
+      "storeClass": "MethylationPlugin/Store/SeqFeature/MethylBigWig",
+      "type": "MethylationPlugin/View/Track/Wiggle/MethylPlot",
+      "urlTemplate": "raw/test_methyl_short_v3.bw",
+      "context": ["cg", "chg", "chh", "4mc", "6ma"],
+      "style": {
+        "height": 50
+      }
+    },
+    {
+      "key": "Random colors",
+      "label": "nuc_dens1",
+      "category": "Motif Density",
+      "storeClass": "JBrowse/Store/SeqFeature/SequenceChunks",
+      "urlTemplate": "seq/{refseq_dirpath}/{refseq}-",
+      "type": "MotifDensityPlugin/View/Track/MotifDensity",
+      "motifs": ["CG", "CHG", "CHH", "C"],
+      "colors": "random"
+        },
+    {
+      "key": "Object colors",
+      "label": "nuc_dens4",
+      "category": "Motif Density",
+      "storeClass": "JBrowse/Store/SeqFeature/SequenceChunks",
+      "urlTemplate": "seq/{refseq_dirpath}/{refseq}-",
+      "type": "MotifDensityPlugin/View/Track/MotifDensity",
+      "motifs": ["CG", "CHG", "CHH", "C"],
+      "colors": {
+        "CG": "#A36085",
+        "CHG": "#0072B2",
+        "CHH": "#CF8F00",
+        "C": "#00c29b"
+      }
+    },
+    {
+      "category": "Stranded Plots",
+      "key": "E2FA",
+      "label": "track_test",
+      "storeClass": "StrandedPlotPlugin/Store/SeqFeature/StrandedBigWig",
+      "type": "StrandedPlotPlugin/View/Track/Wiggle/StrandedXYPlot",
+      "urlTemplate": "raw/test_e2fa_short.bw"
+    },
+    {
+      "category": "RNA-seq",
+      "key": "RNA-seq with unstranded coverage",
+      "label": "test_rnaseq",
+      "maxFeatureScreenDensity": 0.5,
+      "histograms": {
+        "color": "#b1b1b1",
+        "storeClass": "JBrowse/Store/SeqFeature/BigWig",
+        "urlTemplate": "raw/untreated-col-rnaseq_short.bw",
+        "description": "coverage depth",
+      },
+      "storeClass": "JBrowse/Store/SeqFeature/BAM",
+      "urlTemplate": "raw/untreated-col-rnaseq_short.bam",
+      "type": "JBrowse/View/Track/Alignments2"
+    },
+    {
+      "category": "RNA-seq",
+      "key": "RNA-seq with stranded coverage",
+      "label": "test_rnaseq_stranded",
+      "maxFeatureScreenDensity": 0.5,
+      "histograms": {
+        "color": "#d1d1d1",
+        "storeClass": "StrandedPlotPlugin/Store/SeqFeature/StrandedBigWig",
+        "urlTemplate": "raw/untreated-col-rnaseq_short.bw",
+        "description": "coverage depth",
+      },
+      "storeClass": "JBrowse/Store/SeqFeature/BAM",
+      "urlTemplate": "raw/untreated-col-rnaseq_short.bam",
+      "type": "JBrowse/View/Track/Alignments2"
+    },
+    {
+      "category": "Wiggle Plots",
+      "key": "H3K4me3 - XY",
+      "label": "track_test_xy",
+      "storeClass": "JBrowse/Store/SeqFeature/BigWig",
+      "type": "JBrowse/View/Track/Wiggle/XYPlot",
+      "urlTemplate": "raw/chip_h3k4me3_test.bw",
+      "style": {
+        "pos_color": "#862BB3"
+      }
+    },
+    {
+      "category": "Wiggle Plots",
+      "key": "H3K9me2 - XY",
+      "label": "track_test2_xy",
+      "storeClass": "JBrowse/Store/SeqFeature/BigWig",
+      "type": "JBrowse/View/Track/Wiggle/XYPlot",
+      "urlTemplate": "raw/chip_h3k9m2_zscore.bw"
+      },
+    {
+      "category": "Wiggle Plots",
+      "key": "H3K4me3 - Density",
+      "label": "track_test_dens",
+      "storeClass": "JBrowse/Store/SeqFeature/BigWig",
+      "type": "JBrowse/View/Track/Wiggle/Density",
+      "urlTemplate": "raw/chip_h3k4me3_test.bw"
+      },
+   ]
+}

@@ -1,0 +1,30 @@
+[submodule "plugins/HierarchicalCheckboxPlugin"]
+	path = plugins/HierarchicalCheckboxPlugin
+	url = https://github.com/bhofmei/jbplugin-hierarchicalcheckbox
+[submodule "plugins/MethylationPlugin"]
+	path = plugins/MethylationPlugin
+	url = https://github.com/bhofmei/jbplugin-methylation
+[submodule "plugins/MotifDensityPlugin"]
+	path = plugins/MotifDensityPlugin
+	url = https://github.com/bhofmei/jbplugin-motifdens
+[submodule "plugins/ScreenShotPlugin"]
+	path = plugins/ScreenShotPlugin
+	url = https://github.com/bhofmei/jbplugin-screenshot
+[submodule "plugins/SeqViewsPlugin"]
+	path = plugins/SeqViewsPlugin
+	url = https://github.com/bhofmei/jbplugin-seqview
+[submodule "plugins/SmallRNAPlugin"]
+	path = plugins/SmallRNAPlugin
+	url = https://github.com/bhofmei/jbplugin-smallrna
+[submodule "plugins/StrandedPlotPlugin"]
+	path = plugins/StrandedPlotPlugin
+	url = https://github.com/bhofmei/jbplugin-strandedplot
+[submodule "plugins/TrackScorePlugin"]
+	path = plugins/TrackScorePlugin
+	url = https://github.com/bhofmei/jbplugin-trackscores
+[submodule "plugins/WiggleSVGPlotPlugin"]
+	path = plugins/WiggleSVGPlotPlugin
+	url = https://github.com/bhofmei/jbplugin-wigglesvg
+[submodule "plugins/YScaleMenuPlugin"]
+	path = plugins/YScaleMenuPlugin
+	url = https://github.com/bhofmei/jbplugin-yscale
