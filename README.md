@@ -19,27 +19,83 @@ To see all the plugins in action, go to [https://bhofmei.github.io/bhofmei-jbplu
   - [Track Scores Plugin](https://github.com/bhofmei/jbplugin-trackscores): Adds a track menu item to change between autoscale types and manual limits
   - [Y-Scale Plugin](https://github.com/bhofmei/jbplugin-yscale): Adds global menu option to set the y-scale position of all visible tracks
 
-## Installation for Web-Browser-Based JBrowse
+## JBrowse Versions
 
-* This works for UNIX systems only (to my knowledge).
-* Install/activate - See [browser installation](browser-unix-install.md) for steps to download plugins of interest.
-* Update - In the plugin directory to be updated, run
+These plugins are designed for JBrowse v1.11.6 - v1.12.6. Installation directions are for these versions.
+
+JBrowse v1.13.0+ uses a radically different system to download dependencies and build the site. The plugins are likely to work as-is but have not been tested extensively. See the [JBrowse documentation](http://jbrowse.org/jbrowse-1-13-0-release/) for more information.
+
+## Installation for Unix Systems
+
+### For Web-Browser-Based JBrowse
+
+#### Bulk installation
+1. Add this repositiory to the plugin folder of JBrowse, i.e. `jbrowse-root/plugins/`.
 ```
-git pull
+git clone https://github.com/bhofmei/bhofmei-jbplugins BhofmeiPlugins
 ```
+2. Update `plugins.json` to install the plugins you are interested in
+  - Default is to install all
+  - Set to `false` for plugins not to install
+3. Run `install.sh`
+  - Assumes that this script is located at `jbrowse-root/plugins/BhofmeiPlugins`
+  - Use `-p prefix` to specify the install directory if this script is located elsewhere
+  - See `install.sh -h` for additional parameters
+4. Copy the output to `jbrowse.conf` or a dataset `tracks.conf` as applicable
+  - If you prefer to use the JSON specification for `jbrowse_conf.json` or `trackList.json`, run as `install.sh -j`
+5. See the indivual plugin repositiories for plugin-specific configuration options
 
-## Installation for Desktop JBrowse
+#### Individual plugin installation
+See [browser-unix-install.md](browser-unix-install.md).
 
-### UNIX systems
-* Install/active - See [unix desktop installation](desktop-unix-install.md) for steps to download plugins of interest.
-* Update - In the plugin directory to be updated, run
+### For Desktop-Based JBrowse
+#### Bulk installation
+1. Install this repository in desired directory
 ```
-git pull
+git clone https://github.com/bhofmei/bhofmei-jbplugins BhofmeiPlugins
 ```
+2. Update `plugins.json` to install the plugins you are interested in
+  - Default is to install all
+  - Set to `false` for plugins not to install
+3. Run `install.sh -d -p <prefix>`
+  - Use `-p <prefix>` to specify the directory to install the plugins. The default is `../`
+  - When prefix is a relative path, it resolves the path and uses the absolute path for the output config
+4. Copy the output to `tracks.conf` for the dataset directory to be opened
+  - If you prefer the JSON specification, run with the `-j` option and copy output to `trackList.json`
+5. See the indivual plugin repositiories for plugin-specific configuration options
 
-### Windows systems
-* Install/activate - See [windows desktop installation](desktop-windows-install.md) for steps to download plugins of interest.
-* Update - Plugin must be reinstalled; see [desktop installation](desktop-windows-install.md) and replace the existing plugin.
+#### Individual plugin installation
+See [desktop-unix-install.md](desktop-unix-install.md).
 
-## Fine Print
+## Installation for Windows Systems Desktop-Based JBrowse
+See [windows desktop installation](desktop-windows-install.md) for steps to download plugins of interest.
+
+## Updating for Unix Systems
+
+#### Bulk updating
+1. In `plugins.json`, specify which plugins to update
+  - Use `true` to update
+  - Use `false` if not installed or don't want updated
+2. Run `update.sh`
+  - By default, looks for plugins at `../`. If they are installed elsewhere, you `-p <prefix>` where `<prefix>` is the aboslute or relative path to the directory where all plugins are installed.
+  - Run `update.sh -h` to see the other options
+ 
+#### Individual plugin updating
+To update a single plugin, run `git pull` within the plugin directory
+
+## Updating for Windows Systems
+
+Plugin must be reinstalled; see [windows installation](desktop-windows-install.md) and replace the existing plugin.
+
+## Citation
+
+If these plugins are used for research or publication, please cite the following. I've spent a lot of time on these and would appreciate the recognition.
+
+Enhanced JBrowse plugins for epigenomics data visualization
+Brigitte T. Hofmeister, Robert J. Schmitz
+bioRxiv 212654; doi: https://doi.org/10.1101/212654
+
+You can read the original article at [bioRxiv](https://www.biorxiv.org/content/early/2017/11/01/212654).
+
+#### Fine Print
 All plugins are distributed under the Apache License, Version 2.0.

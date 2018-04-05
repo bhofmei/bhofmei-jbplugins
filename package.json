@@ -1,6 +1,6 @@
 {
   "name": "bhofmei-jbplugins",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "All jbrowse plugins created by Brigitte Hofmeister",
   "main": "index.js",
   "scripts": {
