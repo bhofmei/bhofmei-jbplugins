@@ -6,7 +6,7 @@
 # possible options:
 # -h (print usage)
 # -q (quiet do not print progress)
-# -d (desktop install, don't print output config)
+# -d (desktop install, use full path in config)
 # -j (print config in JSON format)
 # -p <prefix> (path to install, default is ../)
 # -c <file> (config file that has plugins, default plugins.json)
@@ -22,7 +22,7 @@ function readJSON {
 
 function useage(){
   echo ""
-  echo "Usage: install.sh [-h] [-j] [-d] [-p <prefix>] [-c <config file>] <command>"
+  echo "Usage: install.sh [-h] [-j] [-d] [-p <prefix>] [-c <config file>]"
   echo ""
   echo "  Will install the plugins specified in the config file located at path"
   echo "  When '-d' is not set, will print JBrowse config for the plugins installed to be included in"
@@ -33,11 +33,45 @@ function useage(){
   echo "-q         Quiet; don't print progress"
   echo "-j         Output JBrowse config in JSON format for 'jbrowse_conf.json'"
   echo "             Default outputs for 'jbrowse.conf'"
-  echo "-d         Desktop install - do not print ouput JBrowse config"
+  echo "-d         Desktop install - always use full path in output config"
   echo "-p prefix  Install in this directory; default is '../' which"
   echo "             should be the JBrowse plugin folder"
-  echo "-c config  JSON file specifying which plugins to install/update"
+  echo "-c config  JSON file specifying which plugins to install"
   echo "             default is 'plugins.json'"
+}
+
+function normalizePath {
+  # remove /./ sequences
+  local   path=${1//\/.\//\/}
+  # Remove first dir/.. sequence.
+  local   npath=$(echo $path | sed -e 's;[^/][^/]*/\.\./;;')
+
+  # Remove remaining dir/.. sequence.
+  while [[ $npath != $path ]]
+  do
+      path=$npath
+      npath=$(echo $path | sed -e 's;[^/][^/]*/\.\./;;')
+  done
+  echo $path
+}
+
+function getConfPath {
+  # $1 isDesktop? $2 currentPath $3 prefix
+  desktop=$1
+  curpath=$2
+  prefix=$3
+  isAbs=`echo $3 | grep -E '^\/' | wc -l`
+
+  if [[ ${isAbs} -gt 0 ]]; then
+  echo ${prefix}
+  else
+    if [[ $prefix == "../" && ${curpath} =~ plugins/(BhofmeiPlugins|bhofmei-jbplugins) && $desktop != "true" ]]; then
+      echo "plugins/"
+    else
+      m=`normalizePath $curpath/$prefix`
+      echo $m
+    fi;
+  fi;
 }
 
 function installPlugin {
@@ -54,7 +88,7 @@ function installPlugin {
   if [[ $json == "true" ]]; then
     echo "    \"${2}\" : { \"location\" : \"${configpath}${name}\" },"
   else
-    echo -e "\n[plugins.${name}]\nlocation = ${configpath}${name}"
+    echo -e "[plugins.${name}]\nlocation = ${configpath}${name}"
   fi
 }
 
@@ -98,28 +132,14 @@ while getopts "hqjdp:c:" opt; do
   esac
 done
 
-if [[ ${QUIET} == "" ]]; then
-  echo ""
-  echo "Config file: $CONFIG"
-  echo "Path: $PREFIX"
-  echo "JSON output format: $JSON"
-  echo ""
-fi
 curpath=`pwd`
 
 # make sure path ends in /
 PREFIX=`echo "${PREFIX}/" | sed 's/\/\//\//'`
 EXPPATH=$PREFIX
 
-# when done correctly, should be installed at ../ but config says "plugins/"
-if [[ $PREFIX == "../" && ${curpath} =~ plugins/(BhofmeiPlugins|bhofmei-jbplugins) ]]; then
-  EXPPATH="plugins/"
-else
-  if [[ $PREFIX == "../" ]]; then
-    echo "Unexpected path...output configuration text maybe incorrect relative to the root JBrowse directory"
-    echo "Use '-p' parameter to ensure path is correct"
-  fi;
-fi;
+## get the path to specify in the config file
+EXPPATH=`getConfPath $DESKTOP $curpath $PREFIX`
 
 BASE=https://github.com/bhofmei/
 URLS=(jbplugin-hierarchicalcheckbox jbplugin-methylation jbplugin-motifdens jbplugin-seqview jbplugin-screenshot jbplugin-smallrna jbplugin-strandedplot jbplugin-trackscores jbplugin-wigglesvg jbplugin-yscale)
@@ -133,8 +153,8 @@ for i in ${!NAMES[@]}; do
   if [[ $b == "true" ]]; then
     u=${BASE}${URLS[i]}
     t=`installPlugin ${PREFIX} ${name} $u ${JSON} ${EXPPATH} ${QUIET}`
-    #CONFTXT=`echo -e "${CONFTXT}\n${t}"`
-    CONFTXT="${CONFTXT}${t}"
+    CONFTXT=`echo -e "${CONFTXT}\n${t}"`
+    #CONFTXT="${CONFTXT}${t}"
   fi;
 done
 # remove trailing comma if json format and add plugin section
@@ -144,11 +164,10 @@ if [[ $JSON == "true" ]]; then
 fi;
 
 # output results for config
-if [[ $DESKTOP != "true" ]]; then
   echo ""
   echo ""
   if [[ $JSON == "true" ]]; then
-    echo "Include in 'jbrowse_conf.json' or 'tracks_conf.json"
+    echo "Include in 'jbrowse_conf.json' or 'trackList.json"
     echo ""
     echo "$CONFTXT"
     echo ""
@@ -157,5 +176,4 @@ if [[ $DESKTOP != "true" ]]; then
     echo "Include in [GENERAL] section of 'jbrowse.conf' or 'tracks.conf'"
     echo -e "$CONFTXT"
   fi
-fi;
 exit 0
