@@ -1,0 +1,12 @@
+{
+  "HierarchicalCheckboxPlugin": true,
+  "MethylationPlugin": true,
+  "MotifDensityPlugin": true,
+  "SeqViewsPlugin": true,
+  "ScreenShotPlugin": true,
+  "SmallRNAPlugin": true,
+  "StrandedPlotPlugin": true,
+  "TrackScorePlugin": true,
+  "WiggleSVGPlotPlugin": true,
+  "YScaleMenuPlugin": true
+}
