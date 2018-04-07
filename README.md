@@ -93,7 +93,7 @@ Many of the individual plugins have their own unit tests and test data sets.
 
 Additionally, manual integration testing has been done with [BrowserStack](https://www.browserstack.com/) to verify compatibility with different web browsers and versions.
 
-<a href="https://www.browserstack.com/"><img src="./img/browserstack-logo-600x315.png" height="78.75" width="150"></a>
+<a href="https://www.browserstack.com/"><img src="./img/browserstack-logo-600x315.png" height="157.5" width="300"></a>
 
 ## Citation
 
