@@ -87,6 +87,14 @@ To update a single plugin, run `git pull` within the plugin directory
 
 Plugin must be reinstalled; see [windows installation](desktop-windows-install.md) and replace the existing plugin.
 
+## Testing
+
+Many of the individual plugins have their own unit tests and test data sets.
+
+Additionally, manual integration testing has been done with [BrowserStack](https://www.browserstack.com/) to verify compatibility with different web browsers and versions.
+
+<a href="https://www.browserstack.com/"><img src="./img/browserstack-logo-600x315.png" height="78.75" width="150"></a>
+
 ## Citation
 
 If these plugins are used for research or publication, please cite the following. I've spent a lot of time on these and would appreciate the recognition.
