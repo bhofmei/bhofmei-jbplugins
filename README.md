@@ -19,6 +19,16 @@ To see all the plugins in action, go to [https://bhofmei.github.io/bhofmei-jbplu
   - [Track Scores Plugin](https://github.com/bhofmei/jbplugin-trackscores): Adds a track menu item to change between autoscale types and manual limits
   - [Y-Scale Plugin](https://github.com/bhofmei/jbplugin-yscale): Adds global menu option to set the y-scale position of all visible tracks
 
+## Citation
+
+If these plugins are used for research or publication, please cite the following. I've spent a lot of time on these and would appreciate the recognition.
+
+Enhanced JBrowse plugins for epigenomics data visualization
+Brigitte T. Hofmeister, Robert J. Schmitz
+BMC Bioinformatics 19(159); doi: 10.1186/s12859-018-2160-z
+
+You can read the original article at [BMC Bioinformatics](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2160-z).
+
 ## JBrowse Versions
 
 These plugins are designed for JBrowse v1.11.6 - v1.12.6. Installation directions are for these versions.
@@ -94,16 +104,6 @@ Many of the individual plugins have their own unit tests and test data sets.
 Additionally, manual integration testing has been done with [BrowserStack](https://www.browserstack.com/) to verify compatibility with different web browsers and versions.
 
 <a href="https://www.browserstack.com/"><img src="./img/browserstack-logo-600x315.png" height="157.5" width="300"></a>
-
-## Citation
-
-If these plugins are used for research or publication, please cite the following. I've spent a lot of time on these and would appreciate the recognition.
-
-Enhanced JBrowse plugins for epigenomics data visualization
-Brigitte T. Hofmeister, Robert J. Schmitz
-bioRxiv 212654; doi: https://doi.org/10.1101/212654
-
-You can read the original article at [bioRxiv](https://www.biorxiv.org/content/early/2017/11/01/212654).
 
 #### Fine Print
 All plugins are distributed under the Apache License, Version 2.0.
